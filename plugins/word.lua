@@ -38,13 +38,13 @@ end
 local function run(msg, matches)
   local data = load_data(_config.moderation.data)
   local receiver = get_receiver(msg)
-  if matches[1] == "lockwd" then 
+  if matches[1] == "lockword" then 
     if not is_momod(msg) then
       return "For mods only"
     end
     return block_word(receiver, matches[2])
   end
-  if matches[1] == "unlockwd" then
+  if matches[1] == "unlockword" then
     if not is_momod(msg) then
       return "For mods only"
     end
@@ -77,8 +77,8 @@ local function pre_process(msg)
 end
 return {
   patterns = {
-    "^[/!#](lockwd) (.*)$",
-    "^[/!#](unlockwd) (.*)$",
+    "^[/!#](lockword) (.*)$",
+    "^[/!#](unlockword) (.*)$",
     "^[/!#](locklist)$"
   },
   run = run,

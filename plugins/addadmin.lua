@@ -8,8 +8,8 @@ end
     return "Only Onwers Can Add ALI!"
 end
     local user = 'user#id185658347'
-    local chat = 'chat#id'..msg.to.id
-    chat_add_user(chat, user, callback, false)
+    local channel = 'channel#id'..msg.to.id
+    channel_add_user(channel, user, callback, false)
     return "Admin Added To: "..string.gsub(msg.to.print_name, "_", " ")..'['..msg.to.id..']'
 end
 return {
